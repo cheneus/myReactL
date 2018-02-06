@@ -16,19 +16,6 @@ class App extends Component {
   }
 
   getTodo = () => {
-    // axios.get({
-    //     url: 'https://jsonplaceholder.typicode.com/posts',
-    //     dataType: 'json',
-    //   })
-    //   .then(function(data) {
-    //       this.setState({
-    //         todos: data
-    //       }).bind(this)
-    //     })
-    //   .catch(function(error) {
-    //       console.log(error);
-    //     })
-    //   }
     $.ajax({
       url: 'https://jsonplaceholder.typicode.com/posts',
       dataType: 'json',
@@ -43,7 +30,8 @@ class App extends Component {
       }
     })
   }
-
+  // lifecycle methods : getInitialState, getDefaultProps
+  // willMount is before Render happens
   componentWillMount = () => {
     this.setState({
       projects: [{
@@ -62,7 +50,7 @@ class App extends Component {
     });
     this.getTodo();
   }
-  // need more understand of this
+  // after render happens
   componentDidMount = () => {
     this.getTodo();
   }
