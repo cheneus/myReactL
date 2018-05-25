@@ -1,7 +1,7 @@
 export default () => {
   return [
-    { title: "Javascript" },
-    { title: "React" },
-    { title: "Red" }
+    { title: "Javascript", pages:245 },
+    { title: "React" , pages: 111},
+    { title: "Red", pages: 2}
   ];
 };
