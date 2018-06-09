@@ -1,27 +1,34 @@
-import API_KEY from '../config'
-import axios from 'axios'
-import FETCH_WEATHER from './type'
+import API_KEY from "../config";
+import axios from "axios";
+import { FETCH_WEATHER } from "./type";
 
-const apiUrl = `api.openweathermap.org/data/2.5/forecast?id=524901&APPID=${API_KEY}`
+const apiUrl = `api.openweathermap.org/data/2.5/forecast?id=524901&APPID=${API_KEY}`;
 
-const fetchWeather = (city) => {
+const weatherAPI = city => {
+  const url = `${apiUrl}&q=${city},us`;
+  console.log(url);
+  // return function(dispatch){
+  console.log("inside get ", url);
+     axios.get(`http://${url}`).then(res => {return res});
+};
 
+// const fetchWeather = (city) => {
+//   const request =  weatherAPI(city);
+//   console.log(request)
+//   debugger
+//   return {
+//     type: FETCH_WEATHER,
+//     payload: request
+//   };
+// };
+
+export function fetchWeather(city) {
     const url = `${apiUrl}&q=${city},us`;
-    console.log(url)
-const request = axios.get(`http://${url}`)
-    // .then(res => {
-    //     return res
-    //     console.log('res')
-    // })
-    // .catch(err => {
-    //     console.log(error)
-    //     console.log(err)
-    // }) 
-    console.log('Request: ',request)
+    const request = axios.get(`http://${url}`);
     return {
-        type: FETCH_WEATHER,
-        payload: request
-    }
-}
+      type: FETCH_WEATHER,
+      payload: request
+    };
+  }
 
-export default fetchWeather
+export default fetchWeather;
