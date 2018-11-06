@@ -1,4 +1,5 @@
 module.exports = {
+  // https://webpack.js.org/configuration/ for reference
   mode:"development",
   entry: [
     './src/index.js'

@@ -1,30 +1,28 @@
 module.exports = {
-  entry: ['./src/index.js'],
+  // https://webpack.js.org/configuration/ for reference
+  mode:"development",
+  entry: [
+    './src/index.js'
+  ],
   output: {
     path: __dirname,
     publicPath: '/',
     filename: 'bundle.js'
   },
   module: {
-    loaders: [
-      {
-        exclude: /node_modules/,
-        loader: 'babel',
-        query: {
-          presets: ['react', 'es2015', 'stage-1']
-        }
+    rules: [{
+      exclude: /node_modules/,
+      loader: 'babel-loader',
+      query: {
+        presets: ['react', 'es2015', 'stage-1']
       }
-    ]
+    }]
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: [".js", ".json", ".jsx", ".css"]
   },
   devServer: {
     historyApiFallback: true,
-    contentBase: './',
-    watchOptions: {
-      aggregateTimeout: 300,
-      poll: 1000
-    }
+    contentBase: './'
   }
 };
