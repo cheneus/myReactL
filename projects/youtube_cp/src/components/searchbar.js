@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-// import React  from 'react'
-
 // class SearchBar extends React.Component {
 // start with functional then use class if only you need more functionality
 class SearchBar extends Component {
@@ -10,13 +8,16 @@ class SearchBar extends Component {
 		return (
 			<div className='search-bar'>
 				<input
+					placeholder='type to search'
 					value={this.state.term}
 					// onChange={this.onInputChange}/>
-					onChange={event => this.onInputChange(event.target.value)} />
+					// onChange={event => this.setState({term:event.target.value})}
+					onChange={event => this.onInputChange(event.target.value)} 
+					/>
 			</div>
 		)
 	}
-
+	// {handle or on}InputChange 
 	onInputChange(event) {
 		this.setState({ term: event })
 		this.props.onSearchTermChange(this.state.term)

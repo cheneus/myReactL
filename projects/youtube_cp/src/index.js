@@ -15,7 +15,8 @@ class App extends Component {
 
 	state = {
 		videos: [],
-		selectedVideo: null
+		selectedVideo: null,
+		searchTerm: ''
 	};
 
 	componentWillMount() {
@@ -40,7 +41,7 @@ class App extends Component {
 
 		return (
 			<div>
-				<SearchBar onSearchTermChange={videoSearch} />
+				<SearchBar onSearchTermChange={videoSearch}/>
 				<div className='row'>
 					<VideoDetail video={this.state.selectedVideo} />
 					<VideoList

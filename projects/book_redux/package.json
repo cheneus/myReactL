@@ -1,7 +1,7 @@
 {
-  "name": "redux-simple-starter",
+  "name": "redux-book-playground",
   "version": "1.0.0",
-  "description": "Simple starter package for Redux with React and Babel support",
+  "description": "Simple playground for Redux with React and Babel support featuring",
   "main": "index.js",
   "repository": "",
   "scripts": {
@@ -12,8 +12,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "babel-core": "^6.2.1",
-    "babel-loader": "^6.2.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.1.18",
     "babel-preset-react": "^6.1.18",
     "chai": "^3.5.0",
@@ -23,14 +24,16 @@
     "eslint-plugin-react": "^7.6.1",
     "jquery": "^3.3.1",
     "jsdom": "^8.1.0",
-    "mocha": "^2.4.5",
+    "mocha": "^5.2.0",
     "react-addons-test-utils": "^0.14.7",
-    "webpack": "^1.12.9",
-    "webpack-dev-server": "^1.14.0"
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
   },
   "dependencies": {
     "babel-preset-stage-1": "^6.1.18",
-    "lodash": "^3.10.1",
+    "bable-loader": "0.0.1-security",
+    "lodash": "^4.17.11",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-redux": "4.3.0",
