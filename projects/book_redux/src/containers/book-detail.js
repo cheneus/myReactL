@@ -6,7 +6,6 @@ import {bindActionCreators} from 'redux'
 class BookDetail extends Component {
 
 	render() {
-		
             if(!this.props.book) {
                 return <div>Select Book to get started</div>
             }
@@ -21,6 +20,7 @@ class BookDetail extends Component {
 }
 
 // takes application state return it as props
+// state to redux
 const mapStateToProps = (state) => {
 	return {
 		book: state.activeBook

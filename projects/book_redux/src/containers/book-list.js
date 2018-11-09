@@ -29,6 +29,7 @@ class BookList extends Component {
 }
 
 // takes application state return it as props
+// the object that is return is {this.props.books} in the component
 const mapStateToProps = (state) => {
 	return {
 		books: state.books
